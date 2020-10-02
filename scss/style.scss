@@ -1,0 +1,238 @@
+:root{
+    --color1: grey; 
+    --color2: white;
+    --color3: burlywood;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin:  auto;
+    width: 100vw;
+    min-height: 100vh;
+    
+    #page-header {
+        background: var(--color1) url(../img/tree-lake.jpg) center center no-repeat;
+        background-size: 100%;
+        height: 40vh;
+        width: 100%;
+       
+
+        .overlay{
+            background-color: rgba(0, 0, 0, .3);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .container {
+                color: var(--color2);
+                display: block;
+                text-align: center;
+
+                .underline {
+                    text-decoration: underline var(--color3);
+                }
+
+
+                #the-budget {
+                padding: 25px;
+                }
+
+                ul {
+                    list-style-type: none;
+                    font-size: 18px;
+                    margin-top: 10px;
+
+                    li {
+                        display: inline-block;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+      
+    }
+
+    #main-container {
+        width: 100%;
+        min-height: 60vh;
+        height: auto;
+        display: block;
+        text-align: center;
+
+        //stlye inputs
+        #inputs {
+            background: linear-gradient(var(--color1), var(--color2));
+            width: 100%;
+            height: 75px;
+            padding: 25px;
+
+            //apllied to each input
+            .input-style {
+                height: 25px; 
+                border-radius: 5px;
+                border: none;
+                box-shadow: 1px 1px 3px green;
+            }
+
+            .input-style:hover, #enter-fig:hover {
+                border: 2px inset var(--color1);
+                cursor: pointer;
+            }
+
+            //set width of each individual input
+            #inc-exp {
+                width: 50px;  
+            }
+
+            #input-description {
+                width: 250px;
+            }
+
+            //Remove spinners (Chrome, Safari, Edge, Opera)
+            #input-amount::-webkit-inner-spin-button, #input-amount::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+            }
+
+            //remove spinners (firefox
+            #input-amount {
+                -moz-appearance: textfield;
+            }         
+
+            #input-amount, #income-source, #expense-type {
+                width: 120px;
+            }       
+            
+            #income-source{
+                display: inline;
+            }
+
+            #expense-type{
+                display: none;
+            } 
+
+            #enter-fig {
+                border: 2px outset var(--color1);
+                background-color: var(--color3);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+
+        }
+
+        //income and expenses section
+        #incomes-expenses {
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            margin: auto;
+
+            .underline {
+                text-decoration: underline;
+            }
+
+            span {
+                display: none;
+            }
+            
+            table {
+                border-collapse: collapse;
+                table-layout: auto;
+                width: 30vw;
+                margin: 0 20px;
+
+                th {
+                    width: auto;
+                    padding: 10px 15px;
+                    background-color: var(--color3);
+                }
+            
+                :not(:first-child) tr:hover {
+                    background-color: var(--color3);
+                    filter: brightness(150%);
+                    cursor: pointer;
+
+                    td span{
+                        display: block;
+                        color: red;
+                        position: relative;
+                        float: right;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+//Animations
+.animate-list-item {
+    animation: .5s linear forwards slide-in;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20%);
+        
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@media (max-width: 799px){
+
+    body {
+        width: 100vw;
+        margin: auto;
+    }
+
+    #page-header {
+        background: var(--color1) url(../img/tree-lake.jpg) center center no-repeat stretch;
+        background-size: auto;
+        min-height: 30vh;
+    }
+
+    #main-container {
+        width: 100vw;
+
+        #inputs {
+            display: block;
+            height: auto;
+            background-color: green;
+
+            input, #enter-fig{
+                display: block;
+                margin: auto;
+                margin-top: 5px; 
+                text-align: center;
+            }    
+            
+        }
+
+        #incomes-expenses {
+            position: relative;
+            top: 75px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100vw;
+
+            table {
+                width: 100vw;
+                font-size: 14px;
+            }
+        }
+
+    }
+    
+}

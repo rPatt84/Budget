@@ -1,0 +1,250 @@
+:root {
+  --color1: grey;
+  --color2: white;
+  --color3: burlywood;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: auto;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+body #page-header {
+  background: var(--color1) url(../img/tree-lake.jpg) center center no-repeat;
+  background-size: 100%;
+  height: 40vh;
+  width: 100%;
+}
+
+body #page-header .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #page-header .overlay .container {
+  color: var(--color2);
+  display: block;
+  text-align: center;
+}
+
+body #page-header .overlay .container .underline {
+  -webkit-text-decoration: underline var(--color3);
+          text-decoration: underline var(--color3);
+}
+
+body #page-header .overlay .container #the-budget {
+  padding: 25px;
+}
+
+body #page-header .overlay .container ul {
+  list-style-type: none;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+body #page-header .overlay .container ul li {
+  display: inline-block;
+  padding: 10px;
+}
+
+body #main-container {
+  width: 100%;
+  min-height: 60vh;
+  height: auto;
+  display: block;
+  text-align: center;
+}
+
+body #main-container #inputs {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color1)), to(var(--color2)));
+  background: linear-gradient(var(--color1), var(--color2));
+  width: 100%;
+  height: 75px;
+  padding: 25px;
+}
+
+body #main-container #inputs .input-style {
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 1px 1px 3px green;
+          box-shadow: 1px 1px 3px green;
+}
+
+body #main-container #inputs .input-style:hover, body #main-container #inputs #enter-fig:hover {
+  border: 2px inset var(--color1);
+  cursor: pointer;
+}
+
+body #main-container #inputs #inc-exp {
+  width: 50px;
+}
+
+body #main-container #inputs #input-description {
+  width: 250px;
+}
+
+body #main-container #inputs #input-amount::-webkit-inner-spin-button, body #main-container #inputs #input-amount::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+body #main-container #inputs #input-amount {
+  -moz-appearance: textfield;
+}
+
+body #main-container #inputs #input-amount, body #main-container #inputs #income-source, body #main-container #inputs #expense-type {
+  width: 120px;
+}
+
+body #main-container #inputs #income-source {
+  display: inline;
+}
+
+body #main-container #inputs #expense-type {
+  display: none;
+}
+
+body #main-container #inputs #enter-fig {
+  border: 2px outset var(--color1);
+  background-color: var(--color3);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+body #main-container #incomes-expenses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 60%;
+  margin: auto;
+}
+
+body #main-container #incomes-expenses .underline {
+  text-decoration: underline;
+}
+
+body #main-container #incomes-expenses span {
+  display: none;
+}
+
+body #main-container #incomes-expenses table {
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 30vw;
+  margin: 0 20px;
+}
+
+body #main-container #incomes-expenses table th {
+  width: auto;
+  padding: 10px 15px;
+  background-color: var(--color3);
+}
+
+body #main-container #incomes-expenses table :not(:first-child) tr:hover {
+  background-color: var(--color3);
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+  cursor: pointer;
+}
+
+body #main-container #incomes-expenses table :not(:first-child) tr:hover td span {
+  display: block;
+  color: red;
+  position: relative;
+  float: right;
+}
+
+.animate-list-item {
+  -webkit-animation: .5s linear forwards slide-in;
+          animation: .5s linear forwards slide-in;
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@media (max-width: 799px) {
+  body {
+    width: 100vw;
+    margin: auto;
+  }
+  #page-header {
+    background: var(--color1) url(../img/tree-lake.jpg) center center no-repeat stretch;
+    background-size: auto;
+    min-height: 30vh;
+  }
+  #main-container {
+    width: 100vw;
+  }
+  #main-container #inputs {
+    display: block;
+    height: auto;
+    background-color: green;
+  }
+  #main-container #inputs input, #main-container #inputs #enter-fig {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+  }
+  #main-container #incomes-expenses {
+    position: relative;
+    top: 75px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    width: 100vw;
+  }
+  #main-container #incomes-expenses table {
+    width: 100vw;
+    font-size: 14px;
+  }
+}
